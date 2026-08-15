@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-import useAxiosPublic from '../../../hooks/useAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { FiMapPin, FiBriefcase, FiUser } from 'react-icons/fi';
 import { FaCrown } from 'react-icons/fa';
 

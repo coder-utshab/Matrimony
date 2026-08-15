@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
-import useAxiosPublic from '../../../hooks/useAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { FiUsers, FiHeart } from 'react-icons/fi';
 import { IoMaleFemale, IoMale, IoFemale } from 'react-icons/io5';
 
