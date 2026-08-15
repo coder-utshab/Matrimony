@@ -1,5 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import CountUp from 'react-countup';
+import CountUpModule from 'react-countup';
+// Vite sometimes resolves CJS interop poorly, resulting in a nested default object
+const CountUp = (CountUpModule && typeof CountUpModule === 'object' && CountUpModule.default) 
+  ? (typeof CountUpModule.default === 'function' ? CountUpModule.default : (CountUpModule.default.default || CountUpModule.default)) 
+  : CountUpModule;
 import { useInView } from 'react-intersection-observer';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { FiUsers, FiHeart } from 'react-icons/fi';

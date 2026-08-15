@@ -10,12 +10,13 @@ const PremiumCards = () => {
   const [sortOrder, setSortOrder] = useState('asc');
 
   // Fetching premium biodatas
-  const { data: premiumBiodatas = [], isLoading } = useQuery({
+  const { data: premiumBiodatas = [], isLoading, isError } = useQuery({
     queryKey: ['premiumBiodatas'],
     queryFn: async () => {
-      const res = await axiosPublic.get('/biodatas/premium');
+      const res = await axiosPublic.get('/biodatas/premium', { timeout: 3000 });
       return res.data;
-    }
+    },
+    retry: 1
   });
 
   // Mock data for preview if database is empty/not connected

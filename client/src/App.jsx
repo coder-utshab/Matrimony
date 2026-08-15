@@ -4,7 +4,15 @@ import { Toaster } from 'react-hot-toast';
 import router from './router/router';
 import AuthProvider from './providers/AuthProvider';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1, // Only retry once (default is 3)
+      refetchOnWindowFocus: false, // Don't refetch on window focus
+      staleTime: 5 * 60 * 1000, // 5 minutes
+    },
+  },
+});
 
 function App() {
   return (
